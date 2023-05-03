@@ -23,4 +23,4 @@ test("add, edit and delete todo", () => {
 
   fireEvent.change(addTodo, { target: { value: "" } });
   fireEvent.click(addButton);
-})
+});
