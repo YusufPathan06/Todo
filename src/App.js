@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -12,7 +12,7 @@ const App = () => {
   const handleAddTodo = () => {
     if (inputValue.trim()) {
       setTodos([...todos, { text: inputValue.trim() }]);
-      setInputValue('');
+      setInputValue("");
     }
   };
 
@@ -39,7 +39,9 @@ const App = () => {
           value={inputValue}
           onChange={handleInputChange}
         />
-        <button data-testid='add-button' onClick={handleAddTodo}>Add</button>
+        <button data-testid="add-button" onClick={handleAddTodo}>
+          Add
+        </button>
       </div>
       <ul>
         {todos?.map((todo, index) => (
@@ -50,12 +52,17 @@ const App = () => {
               value={todo.text}
               onChange={(e) => handleEditTodo(index, e.target.value)}
             />
-            <button data-testid='delete-button' onClick={() => handleDeleteTodo(index)}>Delete</button>
+            <button
+              data-testid="delete-button"
+              onClick={() => handleDeleteTodo(index)}
+            >
+              Delete
+            </button>
           </li>
         ))}
       </ul>
     </div>
   );
-}
+};
 
 export default App;
