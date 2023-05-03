@@ -33,22 +33,24 @@ const App = () => {
       <h1>My Todo List</h1>
       <div className="input-container">
         <input
+          data-testid="add-todo"
           type="text"
           placeholder="Add a todo"
           value={inputValue}
           onChange={handleInputChange}
         />
-        <button onClick={handleAddTodo}>Add</button>
+        <button data-testid='add-button' onClick={handleAddTodo}>Add</button>
       </div>
       <ul>
-        {todos.map((todo, index) => (
+        {todos?.map((todo, index) => (
           <li key={index}>
             <input
+              data-testid="edit-todo"
               type="text"
               value={todo.text}
               onChange={(e) => handleEditTodo(index, e.target.value)}
             />
-            <button onClick={() => handleDeleteTodo(index)}>Delete</button>
+            <button data-testid='delete-button' onClick={() => handleDeleteTodo(index)}>Delete</button>
           </li>
         ))}
       </ul>

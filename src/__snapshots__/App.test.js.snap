@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`todo component is rendered 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <h1>
+      My Todo List
+    </h1>
+    <div
+      class="input-container"
+    >
+      <input
+        data-testid="add-todo"
+        placeholder="Add a todo"
+        type="text"
+        value=""
+      />
+      <button
+        data-testid="add-button"
+      >
+        Add
+      </button>
+    </div>
+    <ul />
+  </div>
+</DocumentFragment>
+`;
